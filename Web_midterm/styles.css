@@ -1,0 +1,498 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  line-height: 1.4;
+}
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+.navbar .logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-menu a:hover {
+  color: #00b4d8;
+}
+.search-area {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  color: #fff; /* цвет иконки */
+}
+
+.search-btn:hover {
+  color: #00b4d8; /* цвет при наведении */
+}
+
+#searchInput {
+  display: none;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  width: 150px;
+  margin-left: 10px;
+}
+
+/* показать поле поиска при активном состоянии */
+.search-area.active #searchInput {
+  display: block;
+}
+
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  width: 80%;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-subscribe {
+  background-color: #4caf50;
+  color: #fff;
+}
+.btn-articles {
+  background-color: #0077b6;
+  color: #fff;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* ==== MOST POPULAR POSTS ==== */
+.popular-posts {
+  padding: 60px 0;
+  background: #f3f3f3;
+  text-align: center;
+}
+
+.popular-posts h2 {
+  font-size: 28px;
+  color: #00b4d8;
+  margin-bottom: 40px;
+}
+
+/* ===== СЕТКА ===== */
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* === КАРТОЧКА === */
+.post {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.post:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* === КАРТИНКИ === */
+.post img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: #fff;
+  display: block;
+}
+
+/* === ТЕКСТ === */
+.post p {
+  margin: 10px 15px 15px;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== ВЫРАВНИВАНИЕ ===== */
+
+/* верхний ряд — ровно */
+.post:nth-child(-n+3) {
+  align-self: start;
+}
+
+/* нижний ряд */
+.post:nth-child(4),
+.post:nth-child(6) {
+  margin-top: -90px; /* приподнимаем 4 и 6 карточки */
+}
+
+.post:nth-child(5) {
+  margin-top: 0; /* центральная остаётся на месте */
+}
+
+/* ==== АДАПТИВ ==== */
+@media (max-width: 992px) {
+  .grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .post {
+    margin-top: 0 !important; /* убираем смещения */
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-6 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* CLIENTS */
+.clients {
+  position: relative;
+  height: 380px; /* немного меньше высота */
+  margin: 60px 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.clients-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+/* затемнение и центрирование текста */
+.clients-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients-overlay h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* контейнер для логотипов */
+.clients-logos {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* каждый клиент */
+.client-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.client-item img {
+  width: 80px;  /* ✅ теперь аккуратный размер */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  filter: brightness(1.2);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.client-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.4);
+}
+
+.client-item p {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+
+/* TOP RATED */
+.top-rated {
+  padding: 60px 0;
+  text-align: center;
+  background: #fff;
+}
+
+.top-rated h2 {
+  font-size: 28px;
+  color: #00b4d8;
+  margin-bottom: 30px;
+}
+
+/* Один ряд без зазоров */
+.horizontal-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* убираем прокрутку */
+  gap: 0; /* фото слипшиеся */
+}
+
+.horizontal-scroll img {
+  width: calc(100% / 6); /* если 6 фото — делим ширину экрана */
+  height: 150px;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0; /* убираем скругления, чтобы идеально слились */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Эффект при наведении */
+.horizontal-scroll img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+
+/* ==== HOT NEWS SECTION ==== */
+.hot-news {
+  background: #f3f3f3;
+  padding: 60px 0;
+  width: 100%;
+}
+
+/* Заголовок */
+.hot-news h2 {
+  text-align: center;
+  color: #00b4d8;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* ==== РЯД ==== */
+.news-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 30px;
+  margin: 0 auto 40px;
+  width: 90%;
+}
+
+/* ==== ОБЩИЕ НАСТРОЙКИ ==== */
+.news-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* === 1-й и 4-й ряды (1–2 и 7–8) === */
+.news-row:first-child .news-item:first-child,
+.news-row:last-child .news-item:last-child {
+  flex-direction: row;
+  flex: 1.3;
+}
+
+/* уменьшили ширину фото, увеличили место под текст */
+.news-row:first-child .news-item:first-child img,
+.news-row:last-child .news-item:last-child img {
+  width: 60%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* текст теперь имеет больше ширины и центрируется */
+.news-row:first-child .news-item:first-child .news-text,
+.news-row:last-child .news-item:last-child .news-text {
+  flex: 1;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+/* === Маленькие сбоку (2 и 7) — делаем заметно меньше === */
+.news-row:first-child .news-item:last-child,
+.news-row:last-child .news-item:first-child {
+  flex-direction: column;
+  flex: 0.5; /* стало меньше */
+  align-items: center;
+}
+
+.news-row:first-child .news-item:last-child img,
+.news-row:last-child .news-item:first-child img {
+  width: 90%;
+  height: 240px; /* чуть ниже, аккуратнее */
+  object-fit: cover;
+}
+
+/* === Средние ряды (3–6) === */
+.news-row:nth-child(2) .news-item,
+.news-row:nth-child(3) .news-item {
+  flex-direction: column;
+  flex: 1;
+}
+
+.news-row:nth-child(2) .news-item img,
+.news-row:nth-child(3) .news-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* === ТЕКСТ === */
+.news-text h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin: 15px 0 10px 15px;
+}
+
+.news-text p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 15px 15px;
+}
+
+/* ==== АДАПТИВ ==== */
+@media (max-width: 992px) {
+  .news-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .news-item {
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .news-item img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .news-text {
+    text-align: center;
+    padding: 15px !important;
+  }
+}
+
+
+/* FOOTER */
+.site-footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 10px;
+}
+.site-footer .brand-logo {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff8c00;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 24px;
+  }
+  .horizontal-scroll img {
+    width: 160px;
+    height: 100px;
+  }
+}
