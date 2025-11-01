@@ -56,11 +56,11 @@ body {
   align-items: center;
   justify-content: center;
   padding: 5px;
-  color: #fff; /* цвет иконки */
+  color: #fff; 
 }
 
 .search-btn:hover {
-  color: #00b4d8; /* цвет при наведении */
+  color: #00b4d8; 
 }
 
 #searchInput {
@@ -73,11 +73,9 @@ body {
   margin-left: 10px;
 }
 
-/* показать поле поиска при активном состоянии */
 .search-area.active #searchInput {
   display: block;
 }
-
 
 /* HERO */
 .hero {
@@ -129,7 +127,7 @@ body {
   opacity: 0.8;
 }
 
-/* ==== MOST POPULAR POSTS ==== */
+/* MOST POPULAR POSTS */
 .popular-posts {
   padding: 60px 0;
   background: #f3f3f3;
@@ -142,7 +140,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* ===== СЕТКА ===== */
 .grid-6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -153,7 +150,6 @@ body {
   margin: 0 auto;
 }
 
-/* === КАРТОЧКА === */
 .post {
   background: #fff;
   border-radius: 8px;
@@ -168,7 +164,6 @@ body {
   transform: translateY(-5px) scale(1.03);
 }
 
-/* === КАРТИНКИ === */
 .post img {
   width: 100%;
   height: auto;
@@ -177,7 +172,6 @@ body {
   display: block;
 }
 
-/* === ТЕКСТ === */
 .post p {
   margin: 10px 15px 15px;
   font-size: 16px;
@@ -186,24 +180,19 @@ body {
   font-weight: 500;
 }
 
-/* ===== ВЫРАВНИВАНИЕ ===== */
-
-/* верхний ряд — ровно */
 .post:nth-child(-n+3) {
   align-self: start;
 }
 
-/* нижний ряд */
 .post:nth-child(4),
 .post:nth-child(6) {
-  margin-top: -90px; /* приподнимаем 4 и 6 карточки */
+  margin-top: -90px; 
 }
 
 .post:nth-child(5) {
-  margin-top: 0; /* центральная остаётся на месте */
+  margin-top: 0; 
 }
 
-/* ==== АДАПТИВ ==== */
 @media (max-width: 992px) {
   .grid-6 {
     grid-template-columns: repeat(2, 1fr);
@@ -211,7 +200,7 @@ body {
   }
 
   .post {
-    margin-top: 0 !important; /* убираем смещения */
+    margin-top: 0 !important; 
   }
 }
 
@@ -221,11 +210,10 @@ body {
   }
 }
 
-
 /* CLIENTS */
 .clients {
   position: relative;
-  height: 380px; /* немного меньше высота */
+  height: 380px; 
   margin: 60px 0;
   overflow: hidden;
   border-radius: 10px;
@@ -238,7 +226,6 @@ body {
   filter: brightness(0.5);
 }
 
-/* затемнение и центрирование текста */
 .clients-overlay {
   position: absolute;
   top: 0;
@@ -260,7 +247,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* контейнер для логотипов */
 .clients-logos {
   display: flex;
   gap: 50px;
@@ -268,7 +254,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* каждый клиент */
 .client-item {
   display: flex;
   flex-direction: column;
@@ -277,7 +262,7 @@ body {
 }
 
 .client-item img {
-  width: 80px;  /* ✅ теперь аккуратный размер */
+  width: 80px; 
   height: 80px;
   object-fit: contain;
   margin-bottom: 8px;
@@ -297,7 +282,6 @@ body {
   text-align: center;
 }
 
-
 /* TOP RATED */
 .top-rated {
   padding: 60px 0;
@@ -311,39 +295,36 @@ body {
   margin-bottom: 30px;
 }
 
-/* Один ряд без зазоров */
 .horizontal-scroll {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* убираем прокрутку */
-  gap: 0; /* фото слипшиеся */
+  overflow: hidden; 
+  gap: 0; 
 }
 
 .horizontal-scroll img {
-  width: calc(100% / 6); /* если 6 фото — делим ширину экрана */
+  width: calc(100% / 6); 
   height: 150px;
   object-fit: cover;
   margin: 0;
-  border-radius: 0; /* убираем скругления, чтобы идеально слились */
+  border-radius: 0; 
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Эффект при наведении */
 .horizontal-scroll img:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
   cursor: pointer;
 }
 
-/* ==== HOT NEWS SECTION ==== */
+/*  HOT NEWS SECTION  */
 .hot-news {
   background: #f3f3f3;
   padding: 60px 0;
   width: 100%;
 }
 
-/* Заголовок */
 .hot-news h2 {
   text-align: center;
   color: #00b4d8;
@@ -351,7 +332,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* ==== РЯД ==== */
 .news-row {
   display: flex;
   justify-content: space-between;
@@ -362,7 +342,6 @@ body {
   width: 90%;
 }
 
-/* ==== ОБЩИЕ НАСТРОЙКИ ==== */
 .news-item {
   background: #fff;
   border-radius: 8px;
@@ -377,22 +356,19 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* === 1-й и 4-й ряды (1–2 и 7–8) === */
 .news-row:first-child .news-item:first-child,
 .news-row:last-child .news-item:last-child {
   flex-direction: row;
   flex: 1.3;
 }
 
-/* уменьшили ширину фото, увеличили место под текст */
 .news-row:first-child .news-item:first-child img,
 .news-row:last-child .news-item:last-child img {
   width: 60%;
-  height: 280px;
+  height: 290px;
   object-fit: cover;
 }
 
-/* текст теперь имеет больше ширины и центрируется */
 .news-row:first-child .news-item:first-child .news-text,
 .news-row:last-child .news-item:last-child .news-text {
   flex: 1;
@@ -403,22 +379,20 @@ body {
   text-align: left;
 }
 
-/* === Маленькие сбоку (2 и 7) — делаем заметно меньше === */
 .news-row:first-child .news-item:last-child,
 .news-row:last-child .news-item:first-child {
   flex-direction: column;
-  flex: 0.5; /* стало меньше */
+  flex: 0.5; 
   align-items: center;
 }
 
 .news-row:first-child .news-item:last-child img,
 .news-row:last-child .news-item:first-child img {
   width: 90%;
-  height: 240px; /* чуть ниже, аккуратнее */
+  height: 240px; 
   object-fit: cover;
 }
 
-/* === Средние ряды (3–6) === */
 .news-row:nth-child(2) .news-item,
 .news-row:nth-child(3) .news-item {
   flex-direction: column;
@@ -432,7 +406,6 @@ body {
   object-fit: cover;
 }
 
-/* === ТЕКСТ === */
 .news-text h3 {
   font-size: 16px;
   font-weight: 700;
@@ -448,7 +421,6 @@ body {
   margin: 0 15px 15px;
 }
 
-/* ==== АДАПТИВ ==== */
 @media (max-width: 992px) {
   .news-row {
     flex-direction: column;
@@ -472,18 +444,49 @@ body {
 }
 
 
-/* FOOTER */
+/*  FOOTER  */
 .site-footer {
-  background-color: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 30px 10px;
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 60px;
+  font-size: 14px;
+  flex-wrap: wrap;
 }
-.site-footer .brand-logo {
-  margin-top: 10px;
+
+.site-footer .footer-text {
+  margin: 0;
+  max-width: 70%;
+  line-height: 1.5;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  font-weight: 700;
   font-size: 18px;
-  font-weight: bold;
-  color: #ff8c00;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-text {
+    max-width: 100%;
+  }
 }
 
 /* RESPONSIVE */
